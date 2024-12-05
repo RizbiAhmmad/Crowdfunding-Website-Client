@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Components/MainLayout";
 import Home from "../Components/Home";
 import Campaigns from "../Components/Campaigns";
+import Addcampaign from "../Components/Addcampaign";
+import UpdateCampaign from "../Components/UpdateCampaign";
 
 const router = createBrowserRouter ([
 
@@ -17,6 +19,14 @@ const router = createBrowserRouter ([
         {
             path:"/campaigns",
             element:<Campaigns></Campaigns>
+        },
+        {
+            path:"/addCampaign",
+            element: <Addcampaign></Addcampaign>
+        },
+        {
+            path: "/updateCampaign",
+            element: <UpdateCampaign></UpdateCampaign>
         }
     ]
     }

@@ -3,12 +3,12 @@ import { NavLink, Link } from "react-router-dom";
 // import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
-//   const { user, logOut } = useContext(AuthContext);
+  //   const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-//   const handleLogOut = () => {
-//     logOut().catch((err) => console.error("Logout Error:", err));
-//   };
+  //   const handleLogOut = () => {
+  //     logOut().catch((err) => console.error("Logout Error:", err));
+  //   };
 
   return (
     <div className="navbar bg-black text-white shadow-md sticky px-8 top-0 z-50">
@@ -41,7 +41,9 @@ const Navbar = () => {
 
       {/* Center Links */}
       <div
-        className={`navbar-center lg:flex ${isMenuOpen ? "block" : "hidden"} lg:block`}
+        className={`navbar-center lg:flex ${
+          isMenuOpen ? "block" : "hidden"
+        } lg:block`}
       >
         <ul className="menu menu-horizontal lg:flex flex-col lg:flex-row px-1 lg:px-0">
           <li>
@@ -80,6 +82,20 @@ const Navbar = () => {
               Add Campaign
             </NavLink>
           </li>
+
+          <li>
+            <NavLink
+              to="/updateCampaign"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-cyan-500 font-bold"
+                  : "text-gray-300 hover:text-cyan-500"
+              }
+            >
+              Update Campaign
+            </NavLink>
+          </li>
+
           <li>
             <NavLink
               to="/dashboard"
@@ -135,9 +151,9 @@ const Navbar = () => {
             </button>
           </NavLink>
         )} */}
-        <NavLink><button>Login</button></NavLink>
-
-
+        <NavLink>
+          <button>Login</button>
+        </NavLink>
       </div>
     </div>
   );
