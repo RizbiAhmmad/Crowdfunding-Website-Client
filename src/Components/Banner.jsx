@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Slider from "./Slider";
 
 const Banner = () => {
   return (
-    <div>
+    <div>     
       {/* Extra Section 1 */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">

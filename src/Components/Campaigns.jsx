@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Campaigns = () => {
     const campaigns = useLoaderData();
@@ -43,8 +43,8 @@ const Campaigns = () => {
                       <button
                        
                         className="btn bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-600"
-                      >
-                        See More
+                      ><Link to={`/campaign/${campaign._id}`}>
+                        See More </Link>
                       </button>
                     </td>
                   </tr>

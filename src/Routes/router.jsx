@@ -4,6 +4,7 @@ import Home from "../Components/Home";
 import Campaigns from "../Components/Campaigns";
 import Addcampaign from "../Components/Addcampaign";
 import UpdateCampaign from "../Components/UpdateCampaign";
+import CampaignDetails from "../Components/CampaignDetails";
 
 const router = createBrowserRouter ([
 
@@ -14,7 +15,8 @@ const router = createBrowserRouter ([
         children: [
             {
             path: "/",
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader: () => fetch('http://localhost:5000/campaign')
         },
         {
             path:"/campaigns",
@@ -28,6 +30,11 @@ const router = createBrowserRouter ([
         {
             path: "/updateCampaign",
             element: <UpdateCampaign></UpdateCampaign>
+        },
+        {
+            path: "campaign/:id",
+            element: <CampaignDetails></CampaignDetails>,
+            loader: ({params}) => fetch(`http://localhost:5000/campaign/${params.id}`)
         }
     ]
     }
