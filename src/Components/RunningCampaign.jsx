@@ -36,7 +36,7 @@ const RunningCampaign = () => {
                              
                             </div>
                   
-                            <div className="flex gap-4 mt-4 px-4">
+                            <div className="flex items-center gap-4 mt-4 px-4">
                               <span className="sr-only">Colors available</span>
                   
                               <button

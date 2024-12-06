@@ -98,18 +98,6 @@ const Navbar = () => {
 
           <li>
             <NavLink
-              to="/dashboard"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-cyan-500 font-bold"
-                  : "text-gray-300 hover:text-cyan-500"
-              }
-            >
-              Dashboard
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to="/myDonations"
               className={({ isActive }) =>
                 isActive
