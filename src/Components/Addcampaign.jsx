@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../provider/AuthProvider';
 
 const Addcampaign = () => {
-
+  const { user } = useContext(AuthContext);
   const handleAddCampaign = event => {
     event.preventDefault();
     console.log('Form submitted');
@@ -14,11 +15,13 @@ const Addcampaign = () => {
     const description=form.description.value;
     const minDonation=form.minDonation.value;
     const deadline=form.deadline.value;
-    const userEmail=form.userEmail.value;
-    const userName=form.userName.value;
+    const userName = user?.displayName || "Anonymous";
+  const userEmail = user?.email || "No email provided";
+    
     const image=form.image.value;
 
-    const newCampaign={title,type,description,minDonation,deadline,userEmail,userName,image};
+    const newCampaign={title,type,description,minDonation,deadline,userEmail,userName,image, userEmail: user?.email,
+      userName: user?.displayName };
 
     // Send data to the server
     console.log(newCampaign);
@@ -115,16 +118,21 @@ const Addcampaign = () => {
           <input
             type="text"
             name="userName"
+            value={user?.displayName || ""}
            placeholder="User Name"
             className="input input-bordered w-full bg-gray-100"
+            readOnly
+
           />
         </div>
         <div>
           <label className="block font-medium mb-1">User Email</label>
           <input
             type="email" placeholder="email@example.com"
-           name="userEmail"
+            name="userEmail"
+            value={user?.email || ""}
             className="input input-bordered w-full bg-gray-100"
+            readOnly
           />
         </div>
         

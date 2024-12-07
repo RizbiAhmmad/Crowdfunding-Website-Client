@@ -16,7 +16,7 @@ const Footer = () => {
             <a href="/" className="text-gray-700 hover:text-primary">Home</a>
             <a href="/campaigns" className="text-gray-700 hover:text-primary">All Campaigns</a>
             <a href="/addCampaign" className="text-gray-700 hover:text-primary">Add Campaign</a>
-            <a href="/dashboard" className="text-gray-700 hover:text-primary">Dashboard</a>
+            
           </div>
 
           <div className="flex space-x-4">
