@@ -8,6 +8,7 @@ import CampaignDetails from "../Components/CampaignDetails";
 import MyDonations from "../Components/MyDonations";
 import Login from "../Components/Auth/Login";
 import Register from "../Components/Auth/Register";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter ([
@@ -42,7 +43,7 @@ const router = createBrowserRouter ([
         },
         {
             path: "/myDonations",
-            element: <MyDonations></MyDonations>,
+            element: <PrivateRoute><MyDonations></MyDonations></PrivateRoute>,
             
         },
         {

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Slider from "./Slider";
 
 const Banner = () => {
+
+  
   return (
     <div>     
       {/* Extra Section 1 */}

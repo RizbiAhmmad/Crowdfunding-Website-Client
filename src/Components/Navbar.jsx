@@ -1,10 +1,19 @@
 import React, { useContext, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-// import { AuthContext } from "../provider/AuthProvider";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
   //   const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { user, logOut } = useContext(AuthContext);
+
+  console.log(user);
+
+  const handleLogOut = async () => {
+    await logOut();
+  };
+
 
   //   const handleLogOut = () => {
   //     logOut().catch((err) => console.error("Logout Error:", err));
@@ -113,17 +122,14 @@ const Navbar = () => {
 
       {/* User Section */}
       <div className="navbar-end flex items-center gap-4">
-        {/* {user && user.email ? (
+        {user && user.email ? (
           <>
             <div className="flex items-center gap-2">
               <img
                 src={user.photoURL || "https://via.placeholder.com/40"}
                 alt="Profile"
                 className="w-10 h-10 rounded-full border"
-              />
-              <span className="hidden lg:inline-block font-medium text-gray-300">
-                {user.displayName || "User"}
-              </span>
+              />             
             </div>
             <button
               onClick={handleLogOut}
@@ -138,10 +144,7 @@ const Navbar = () => {
               Login
             </button>
           </NavLink>
-        )} */}
-        <NavLink to="/login">
-          <button>Login</button>
-        </NavLink>
+        )}
       </div>
     </div>
   );
