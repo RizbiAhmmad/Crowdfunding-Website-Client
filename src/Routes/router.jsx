@@ -6,8 +6,9 @@ import Addcampaign from "../Components/Addcampaign";
 import UpdateCampaign from "../Components/UpdateCampaign";
 import CampaignDetails from "../Components/CampaignDetails";
 import MyDonations from "../Components/MyDonations";
-import Login from "../Components/Login";
-import Register from "../Components/Register";
+import Login from "../Components/Auth/Login";
+import Register from "../Components/Auth/Register";
+
 
 const router = createBrowserRouter ([
 
