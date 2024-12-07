@@ -139,7 +139,7 @@ const Navbar = () => {
             </button>
           </NavLink>
         )} */}
-        <NavLink>
+        <NavLink to="/login">
           <button>Login</button>
         </NavLink>
       </div>
