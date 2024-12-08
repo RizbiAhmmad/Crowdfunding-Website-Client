@@ -11,7 +11,9 @@ const RunningCampaign = () => {
 
     return (
         <div className='w-9/12 mx-auto mt-5'>
-            RunningCampaign: {campaigns.length}
+           <h2 className="text-3xl font-bold text-center mb-8">
+            Running Campaigns
+          </h2>
 
             <div className='grid md:grid-cols-3 gap-5 mt-5'>
                 {
