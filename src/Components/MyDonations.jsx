@@ -4,7 +4,6 @@ const MyDonations = () => {
   const [donations, setDonations] = useState([]);
 
   useEffect(() => {
-    // Retrieve donations from localStorage
     const savedDonations = JSON.parse(localStorage.getItem("donations")) || [];
     setDonations(savedDonations);
   }, []);
@@ -12,16 +11,15 @@ const MyDonations = () => {
   const handleRemoveDonation = (index) => {
     const updatedDonations = donations.filter((_, i) => i !== index);
 
-    // Update localStorage
+   
     localStorage.setItem("donations", JSON.stringify(updatedDonations));
 
-    // Update state
     setDonations(updatedDonations);
   };
 
-  // Ensure totalAmount is always a number before calling toFixed
+ 
   const totalAmount = donations.reduce((sum, donation) => {
-    return sum + parseFloat(donation.amount || 0); // Make sure to parse donation amount as a number
+    return sum + parseFloat(donation.amount || 0); 
   }, 0);
 
   return (
@@ -42,16 +40,7 @@ const MyDonations = () => {
                 <p className="text-sm text-gray-600 mt-2">Campaign Type: {donation.type}</p>
                 <p className="text-sm text-gray-600 mt-2">Deadline: {new Date(donation.deadline).toLocaleDateString()}</p>
               </div>
-
-              {/* Update Button */}
-              <div className="p-4 bg-gray-50 text-center">
-                <button
-                  onClick={() => alert("Update functionality is not implemented")}
-                  className="text-sm text-blue-500 hover:text-blue-600"
-                >
-                  Update Donation
-                </button>
-              </div>
+        
 
               {/* Remove Button */}
               <div className="p-4 bg-gray-50 text-center">

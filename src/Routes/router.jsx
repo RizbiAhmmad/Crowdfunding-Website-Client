@@ -9,6 +9,7 @@ import MyDonations from "../Components/MyDonations";
 import Login from "../Components/Auth/Login";
 import Register from "../Components/Auth/Register";
 import PrivateRoute from "./PrivateRoute";
+import MyCampaign from "../Components/MyCampaign";
 
 const router = createBrowserRouter([
 
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
+            },
+            {
+                path:"/myCampaign",
+                element:<PrivateRoute><MyCampaign></MyCampaign></PrivateRoute> 
             }
         ]
     }

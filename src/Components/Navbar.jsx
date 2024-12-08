@@ -94,6 +94,19 @@ const Navbar = () => {
 
           <li>
             <NavLink
+              to="/myCampaign"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-cyan-500 font-bold"
+                  : "text-gray-300 hover:text-cyan-500"
+              }
+            >
+              My Campaign
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
               to="/updateCampaign"
               className={({ isActive }) =>
                 isActive
