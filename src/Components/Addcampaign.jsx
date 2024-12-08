@@ -20,12 +20,11 @@ const Addcampaign = () => {
     
     const image=form.image.value;
 
-    const newCampaign={title,type,description,minDonation,deadline,userEmail,userName,image, userEmail: user?.email,
-      userName: user?.displayName };
+    const newCampaign={title,type,description,minDonation,deadline,userEmail,userName,image };
 
     // Send data to the server
     console.log(newCampaign);
-    fetch('http://localhost:5500/campaign',{
+    fetch('https://tulip-server.vercel.app/campaign',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

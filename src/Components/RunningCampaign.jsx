@@ -6,7 +6,7 @@ const RunningCampaign = () => {
   const limitedCampaigns = campaigns.slice(0, 6);
 
   return (
-    <div className='w-9/12 mx-auto mt-5'>
+    <div className='w-9/12 mx-auto mt-5 ${isDarkMode ? "bg-gray-900 text-white" : "bg-white text-black"} '>
       <h2 className="text-3xl font-bold text-center mb-8">
         Running Campaigns
       </h2>

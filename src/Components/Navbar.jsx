@@ -1,26 +1,30 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 const Navbar = () => {
-  //   const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const { user, logOut } = useContext(AuthContext);
-
-  console.log(user);
 
   const handleLogOut = async () => {
     await logOut();
   };
 
+  // Handle theme toggle
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
-  //   const handleLogOut = () => {
-  //     logOut().catch((err) => console.error("Logout Error:", err));
-  //   };
+  // Apply the theme class to the body
+  useEffect(() => {
+    document.body.className = isDarkMode ? "dark" : "light";
+  }, [isDarkMode]);
 
   return (
-    <div className="navbar bg-black text-white shadow-md sticky px-8 top-0 z-50">
+    <div className={`navbar ${isDarkMode ? "bg-gray-900 text-white" : "bg-white text-black"} shadow-md sticky px-8 top-0 z-50`}>
       <div className="navbar-start flex items-center">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold text-teal-400">
@@ -50,9 +54,7 @@ const Navbar = () => {
 
       {/* Center Links */}
       <div
-        className={`navbar-center lg:flex ${
-          isMenuOpen ? "block" : "hidden"
-        } lg:block`}
+        className={`navbar-center lg:flex ${isMenuOpen ? "block" : "hidden"} lg:block`}
       >
         <ul className="menu menu-horizontal lg:flex flex-col lg:flex-row px-1 lg:px-0">
           <li>
@@ -91,8 +93,6 @@ const Navbar = () => {
               Add Campaign
             </NavLink>
           </li>
-         
-
           <li>
             <NavLink
               to="/myCampaign"
@@ -105,7 +105,6 @@ const Navbar = () => {
               My Campaign
             </NavLink>
           </li>
-
           <li>
             <NavLink
               to="/updateCampaign"
@@ -118,7 +117,6 @@ const Navbar = () => {
               Update Campaign
             </NavLink>
           </li>
-
           <li>
             <NavLink
               to="/myDonations"
@@ -136,6 +134,13 @@ const Navbar = () => {
 
       {/* User Section */}
       <div className="navbar-end flex items-center gap-4">
+        <div
+          className="cursor-pointer text-2xl"
+          onClick={toggleDarkMode}
+          title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        >
+          {isDarkMode ? <FaSun className="text-yellow-400" /> : <FaMoon />}
+        </div>
         {user && user.email ? (
           <>
             <div className="flex items-center gap-2">
@@ -143,7 +148,7 @@ const Navbar = () => {
                 src={user.photoURL || "https://via.placeholder.com/40"}
                 alt="Profile"
                 className="w-10 h-10 rounded-full border"
-              />             
+              />
             </div>
             <button
               onClick={handleLogOut}

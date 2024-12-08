@@ -23,12 +23,12 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5500/campaign')
+                loader: () => fetch('https://tulip-server.vercel.app/campaign')
             },
             {
                 path: "/campaigns",
                 element: <Campaigns></Campaigns>,
-                loader: () => fetch('http://localhost:5500/campaign')
+                loader: () => fetch('https://tulip-server.vercel.app/campaign')
             },
             {
                 path: "/addCampaign",
@@ -36,12 +36,14 @@ const router = createBrowserRouter([
             },
             {
                 path: "/updateCampaign",
-                element: <PrivateRoute><UpdateCampaign></UpdateCampaign></PrivateRoute>
+                element: <PrivateRoute><UpdateCampaign></UpdateCampaign></PrivateRoute>,
+              
+                
             },
             {
                 path: "campaign/:id",
                 element: <PrivateRoute><CampaignDetails></CampaignDetails> </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5500/campaign/${params.id}`)
+                loader: ({ params }) => fetch(`https://tulip-server.vercel.app/campaign/${params.id}`)
             },
             {
                 

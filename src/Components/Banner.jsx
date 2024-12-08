@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Slider from "./Slider";
+
 
 const Banner = () => {
 
   
   return (
-    <div>     
+    <div className=''>     
       {/* Extra Section 1 */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-gray-50 ">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">
             Why Choose Crowdcube?

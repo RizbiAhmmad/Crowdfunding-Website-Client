@@ -9,7 +9,7 @@ const MyCampaign = () => {
     useEffect(() => {
         // Fetch campaigns for the authenticated user
         if (user?.email) {
-            fetch(`http://localhost:5500/campaign?userEmail=${user.email}`)
+            fetch(`https://tulip-server.vercel.app/campaign?userEmail=${user.email}`)
                 .then(res => res.json())
                 .then(data => setCampaigns(data))
                 .catch(error => console.error('Error fetching campaigns:', error));
@@ -27,7 +27,7 @@ const MyCampaign = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5500/campaign/${id}`, {
+                fetch(`https://tulip-server.vercel.app/campaign/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
