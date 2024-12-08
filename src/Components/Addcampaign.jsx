@@ -25,7 +25,7 @@ const Addcampaign = () => {
 
     // Send data to the server
     console.log(newCampaign);
-    fetch('http://localhost:5000/campaign',{
+    fetch('http://localhost:5500/campaign',{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

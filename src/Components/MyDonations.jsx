@@ -10,16 +10,12 @@ const MyDonations = () => {
 
   const handleRemoveDonation = (index) => {
     const updatedDonations = donations.filter((_, i) => i !== index);
-
-   
     localStorage.setItem("donations", JSON.stringify(updatedDonations));
-
     setDonations(updatedDonations);
   };
 
- 
   const totalAmount = donations.reduce((sum, donation) => {
-    return sum + parseFloat(donation.amount || 0); 
+    return sum + parseFloat(donation.amount || 0);
   }, 0);
 
   return (
@@ -33,16 +29,14 @@ const MyDonations = () => {
               key={index}
               className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              {/* Card Image */}
               <div className="p-4 bg-gray-100">
-                <h3 className="text-xl font-semibold text-gray-800">{donation.title}</h3>
-                <p className="text-sm text-gray-600 mt-2">Amount: ${donation.amount}</p>
-                <p className="text-sm text-gray-600 mt-2">Campaign Type: {donation.type}</p>
-                <p className="text-sm text-gray-600 mt-2">Deadline: {new Date(donation.deadline).toLocaleDateString()}</p>
+                <h3 className="text-xl font-semibold text-gray-800">{donation.title || "Untitled Campaign"}</h3>
+                <p className="text-sm text-gray-600 mt-2">Amount: ${donation.amount || 0}</p>
+                <p className="text-sm text-gray-600 mt-2">Campaign Type: {donation.type || "N/A"}</p>
+                <p className="text-sm text-gray-600 mt-2">
+                  Deadline: {donation.deadline ? new Date(donation.deadline).toLocaleDateString() : "No Deadline"}
+                </p>
               </div>
-        
-
-              {/* Remove Button */}
               <div className="p-4 bg-gray-50 text-center">
                 <button
                   onClick={() => handleRemoveDonation(index)}
@@ -58,7 +52,6 @@ const MyDonations = () => {
         <p className="text-lg text-gray-600">No donations yet.</p>
       )}
 
-      {/* Total Donation Amount */}
       {donations.length > 0 && (
         <div className="mt-6 text-right">
           <h2 className="text-xl font-semibold text-gray-800">
