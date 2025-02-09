@@ -1,6 +1,3 @@
-Here’s a **well-structured `README.md`** file** for your **Tulip Crowdfunding Platform** project.  
-
----
 
 # 🌷 Tulip Crowdfunding Platform  
 
