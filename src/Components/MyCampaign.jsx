@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyCampaign = () => {
     const { user } = useContext(AuthContext); // Get authenticated user
@@ -78,12 +79,14 @@ const MyCampaign = () => {
                                         {new Date(campaign.deadline).toLocaleDateString()}
                                     </td>
                                     <td className="p-3 border">
+                                        <Link to={`/campaign/${campaign._id}`}>
                                         <button
                                             className="btn bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-600 mr-2"
                                             onClick={() => console.log('Update functionality here')}
                                         >
                                             Update
                                         </button>
+                                        </Link>
                                         <button
                                             className="btn bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
                                             onClick={() => handleDelete(campaign._id)}

@@ -35,8 +35,10 @@ const router = createBrowserRouter([
                 element: <PrivateRoute> <Addcampaign></Addcampaign> </PrivateRoute>
             },
             {
-                path: "/updateCampaign",
+                path: "/updateCampaign/:id",
                 element: <PrivateRoute><UpdateCampaign></UpdateCampaign></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://tulip-server.vercel.app/campaign/${params.id}`)
+                
               
                 
             },
