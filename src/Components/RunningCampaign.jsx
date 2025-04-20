@@ -14,7 +14,7 @@ const RunningCampaign = () => {
       <div className='grid md:grid-cols-3 gap-5 mt-5'>
         {
           limitedCampaigns.map(campaign => (
-            <div key={campaign.id}>
+            <div key={campaign._id}>
               <div className="flex items-center justify-center">
                 <article className="w-full bg-white rounded-lg shadow-lg overflow-hidden">
                   <div>
