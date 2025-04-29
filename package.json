@@ -15,7 +15,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.7.1",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "firebase": "^11.0.2",
-    "framer-motion": "^12.7.4",
+    "framer-motion": "^12.9.2",
     "localforage": "^1.10.0",
     "lucide-react": "^0.501.0",
     "match-sorter": "^8.0.0",
