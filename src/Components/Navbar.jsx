@@ -105,7 +105,7 @@ const Navbar = () => {
               My Campaign
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               to="/updateCampaign"
               className={({ isActive }) =>
@@ -116,7 +116,7 @@ const Navbar = () => {
             >
               Update Campaign
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
               to="/myDonations"

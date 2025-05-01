@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { motion } from "framer-motion";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const CampaignDetails = () => {
@@ -31,51 +32,68 @@ const CampaignDetails = () => {
   };
 
   return (
-    <div className="w-full md:w-2/3 lg:w-1/2 mx-auto my-8">
-      <div className="relative bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+    <div className="min-h-screen flex justify-center items-center px-4 py-10 bg-gradient-to-br from-green-100 to-blue-100">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="relative w-full max-w-2xl bg-white/60 backdrop-blur-xl border border-gray-200 shadow-2xl rounded-xl overflow-hidden"
+      >
         <button
           onClick={() => navigate(-1)}
-          className="absolute top-3 left-3 bg-gray-100 text-gray-700 rounded-full p-2 shadow-md hover:bg-gray-200 transition-colors duration-200"
-          aria-label="Go back"
+          className="absolute top-4 left-4 bg-white/80 text-gray-800 hover:bg-white hover:shadow-lg p-2 rounded-full transition"
         >
-          <i className="fa-solid fa-arrow-left"></i> Back
+          <i className="fa-solid fa-arrow-left"></i>
         </button>
-        <img
-          className="w-full h-80 rounded-2xl p-2 object-cover"
+
+        <motion.img
           src={campaign.image}
           alt={campaign.title}
-          loading="lazy"
+          className="w-full h-80 object-cover rounded-t-xl"
+          initial={{ scale: 0.95 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6 }}
         />
-        <div className="p-6">
-          <h3 className="text-3xl font-semibold text-gray-800 mb-2">{campaign.title || "Untitled Campaign"}</h3>
-          <p className="text-lg text-gray-600 mb-4">{campaign.description || "No description provided."}</p>
+
+        <div className="p-6 text-gray-800">
+          <h3 className="text-3xl font-bold mb-2">{campaign.title || "Untitled Campaign"}</h3>
+          <p className="text-md text-gray-600 mb-4">{campaign.description || "No description provided."}</p>
+
           <div className="grid grid-cols-2 gap-4 mb-6">
-            <div>
-              <h4 className="text-md text-gray-600">Min Donation:</h4>
-              <p className="text-xl font-semibold text-gray-800">${campaign.minDonation || 0}</p>
+            <div className="flex items-center space-x-2">
+              <i className="fa-solid fa-hand-holding-dollar text-green-600 text-xl"></i>
+              <div>
+                <p className="text-sm text-gray-600">Min Donation</p>
+                <p className="text-lg font-semibold">${campaign.minDonation || 0}</p>
+              </div>
             </div>
-            <div>
-              <h4 className="text-md text-gray-600">Deadline:</h4>
-              <p className="text-xl font-semibold text-gray-800">
-                {campaign.deadline ? new Date(campaign.deadline).toLocaleDateString() : "No Deadline"}
-              </p>
+            <div className="flex items-center space-x-2">
+              <i className="fa-solid fa-clock text-blue-600 text-xl"></i>
+              <div>
+                <p className="text-sm text-gray-600">Deadline</p>
+                <p className="text-lg font-semibold">
+                  {campaign.deadline ? new Date(campaign.deadline).toLocaleDateString() : "No Deadline"}
+                </p>
+              </div>
             </div>
           </div>
+
           <div className="mb-6">
-            <span className="text-sm text-white bg-teal-500 px-4 py-2 rounded-full uppercase font-bold">
+            <span className="inline-block bg-teal-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
               {campaign.type || "General"}
             </span>
           </div>
-          <div>
-            <button
-              onClick={handleDonate}
-              className="w-full flex justify-center items-center px-4 py-2 text-lg font-semibold text-white bg-green-500 hover:bg-green-600 rounded-md transition-colors duration-300"
-            >
-              Donate Now
-            </button>
-          </div>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleDonate}
+            className="w-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white text-lg font-semibold py-2 rounded-md shadow-md transition-all"
+          >
+            <i className="fa-solid fa-heart-circle-plus mr-2"></i> Donate Now
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
