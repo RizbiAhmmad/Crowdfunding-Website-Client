@@ -1,14 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 const Banner = () => {
-
-  
   return (
-    <div className=''>     
-      {/* Extra Section 1 */}
-      <section className="py-12 bg-gray-50 ">
+    <div>
+      {/* Section 1 - Why Choose Crowdcube */}
+      <section className="py-12 px-12 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">
             Why Choose Crowdcube?
@@ -36,12 +33,65 @@ const Banner = () => {
         </div>
       </section>
 
-      {/* Extra Section 2 */}
-      <section className="bg-teal-500 text-white py-12 rounded-lg">
+    
+      {/* Section 2 - Success Stories */}
+      <section className="py-12 px-12 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8">Success Stories</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gray-100 p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold mb-2">Clean Water Project</h3>
+              <p className="text-gray-700">
+                Raised $10,000 to build wells in rural villages of Kenya.
+              </p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold mb-2">School Supplies Drive</h3>
+              <p className="text-gray-700">
+                Helped 500+ children get backpacks and books for school.
+              </p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold mb-2">Medical Aid for Sarah</h3>
+              <p className="text-gray-700">
+                Funded surgery costs for a young girl fighting leukemia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4 - Testimonials */}
+      <section className="py-12 px-12 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Ready to Make a Difference?
-          </h2>
+          <h2 className="text-3xl font-bold mb-8">What People Are Saying</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-gray-100 p-6 rounded-lg shadow">
+              <p className="text-gray-700 italic">
+                "Crowdcube made it so easy to fundraise for my community project. We hit our goal in just two weeks!"
+              </p>
+              <p className="mt-4 font-semibold">— Amina K., Campaign Creator</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow">
+              <p className="text-gray-700 italic">
+                "I love seeing exactly where my donations go. Total transparency and a great platform!"
+              </p>
+              <p className="mt-4 font-semibold">— Jason L., Donor</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow">
+              <p className="text-gray-700 italic">
+                "This platform helped us raise emergency funds quickly after the flood. Truly a lifesaver."
+              </p>
+              <p className="mt-4 font-semibold">— Maya T., Organizer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       {/* Section 5 - Call to Action */}
+       <section className="bg-teal-500 text-white py-12 rounded-lg">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Make a Difference?</h2>
           <p className="mb-6">
             Join thousands of people raising funds for meaningful causes. Create
             your campaign today and start making an impact.

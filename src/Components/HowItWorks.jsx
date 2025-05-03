@@ -21,7 +21,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="py-16 bg-gray-50 text-center">
+    <div className="py-16 bg-gray-50 px-12 text-center">
       <h2 className="text-3xl font-bold mb-8 text-teal-600">How It Works</h2>
       <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
         {steps.map((step, index) => (
