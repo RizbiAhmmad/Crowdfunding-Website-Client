@@ -61,6 +61,34 @@ const Banner = () => {
         </div>
       </section>
 
+      {/* Section - Our Impact in Numbers */}
+<section className="py-16 px-6 md:px-12 bg-white">
+  <div className="container mx-auto text-center">
+    <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-800">
+      Our Impact in Numbers
+    </h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="bg-white shadow-lg rounded-2xl p-6 transform hover:scale-105 transition">
+        <h3 className="text-4xl font-bold text-teal-500">1200+</h3>
+        <p className="mt-2 text-gray-700">Donors Contributed</p>
+      </div>
+      <div className="bg-white shadow-lg rounded-2xl p-6 transform hover:scale-105 transition">
+        <h3 className="text-4xl font-bold text-teal-500">$2.5M</h3>
+        <p className="mt-2 text-gray-700">Funds Raised</p>
+      </div>
+      <div className="bg-white shadow-lg rounded-2xl p-6 transform hover:scale-105 transition">
+        <h3 className="text-4xl font-bold text-teal-500">150+</h3>
+        <p className="mt-2 text-gray-700">Campaigns Funded</p>
+      </div>
+      <div className="bg-white shadow-lg rounded-2xl p-6 transform hover:scale-105 transition">
+        <h3 className="text-4xl font-bold text-teal-500">25</h3>
+        <p className="mt-2 text-gray-700">Countries Reached</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       {/* Section 4 - Testimonials */}
       <section className="py-12 px-12 bg-white">
         <div className="container mx-auto px-4 text-center">
