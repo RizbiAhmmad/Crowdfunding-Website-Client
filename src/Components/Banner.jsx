@@ -33,6 +33,26 @@ const Banner = () => {
         </div>
       </section>
 
+      {/* Section - Featured Campaign Categories */}
+<section className="py-12 px-12 bg-white">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-8">Featured Campaign Categories</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+      <div className="border border-gray-300 p-6 rounded-lg">
+        <h3 className="text-xl font-semibold mb-2">Health & Medical</h3>
+        <p className="text-gray-600">Support urgent medical procedures, treatments, and health outreach programs.</p>
+      </div>
+      <div className="border border-gray-300 p-6 rounded-lg">
+        <h3 className="text-xl font-semibold mb-2">Education</h3>
+        <p className="text-gray-600">Fund school supplies, scholarships, and access to learning for all ages.</p>
+      </div>
+      <div className="border border-gray-300 p-6 rounded-lg">
+        <h3 className="text-xl font-semibold mb-2">Disaster Relief</h3>
+        <p className="text-gray-600">Contribute to emergency aid, rebuilding efforts, and crisis response.</p>
+      </div>
+    </div>
+  </div>
+</section>
     
       {/* Section 2 - Success Stories */}
       <section className="py-12 px-12 bg-white">
